@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:36:21 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/25 16:04:57 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/11/28 17:10:35 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ size_t	ft_strlen(const char *c)
 }
 /*int	main(void)
 {
-	const char *x;
+	char x[15] = "hola";
 	
-	x = "hola";
+	
 	printf("%zu",ft_strlen(x));
 	return(0);
 }*/
