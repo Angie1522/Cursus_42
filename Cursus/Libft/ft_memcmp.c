@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 18:10:36 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/02 15:23:56 by angcasad         ###   ########.fr       */
+/*   Created: 2025/12/02 17:18:18 by angcasad          #+#    #+#             */
+/*   Updated: 2025/12/02 17:57:39 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 //#include <string.h>
 //#include <stdio.h>
-#include "libft.h"
-void	*ft_memchr(const void *s, int c, size_t n)
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*tmps;
 	size_t	i;
+	unsigned char	*t1;
+	unsigned char	*t2;
 
 	i = 0;
-	tmps = (unsigned char *)s;
-	while (i < n)
+	t1 = (unsigned char *)s1;
+	t2 = (unsigned char *)s2;
+	while(i < n)
 	{
-		if (tmps[i] == (unsigned char)c)
-			return (&tmps[i]);
+		if(t1[i] != t2[i])
+			return(t1[i] - t2[i]);
 		i++;
 	}
-	/*if(tmps[i] == '\0' && i == n)
-		return(&tmps[i]);*/
-		
-	return (NULL);
+	return(0);
 }
-
 /*int	main(void)
 {
-	//const char	s[] = "caca";
-	const char	s1[] = "caca";
-	const char	*tmpm;
-	const char	*tmpm1;
+	int a1[4] = {1, 2, 4, 4};
+	int a2[2] = {1, 2};
 	
+	printf("%d\n",ft_memcmp(a1, a2, 11));
+	//printf("%d\n",memcmp("aaa", "aaz", 5));
 	
-	tmpm = ft_memchr(s1, 0, 0);
-	//tmpm1 = memchr(s1, 0, 0);
-	printf("%s\n", tmpm);
-	printf("%s", tmpm1);
 }*/
