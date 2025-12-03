@@ -6,7 +6,7 @@
 #    By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/17 16:05:24 by angcasad          #+#    #+#              #
-#    Updated: 2025/12/02 17:50:58 by angcasad         ###   ########.fr        #
+#    Updated: 2025/12/03 19:26:03 by angcasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ SRC = \
 	ft_strlcat.c\
 	ft_memchr.c\
 	ft_strnstr.c\
-	ft_memcmp.c
+	ft_memcmp.c\
+	ft_atoi.c
 
 OBJ = $(SRC:.c=.o)
 
