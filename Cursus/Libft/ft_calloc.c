@@ -1,49 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 15:50:24 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/04 13:52:10 by angcasad         ###   ########.fr       */
+/*   Created: 2025/12/04 14:48:51 by angcasad          #+#    #+#             */
+/*   Updated: 2025/12/04 17:08:54 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_atoi(const char *ptr)
-{
-	int	i;
-	int	c;
-	int	x;
-	
-	i = 0;
-	x = 0;
-	c = 1;
-	while(ptr[i] == ' ' || (ptr[i] >= 9 && ptr[i] <= 13))
-	{
-		i++;
-	}
-	if(ptr[i] == '-' || ptr[i] == '+')
-	{
-		if(ptr[i] == '-')
-			c = c * -1;
-		i++;
-	}
-	while(ptr[i] >= '0' && ptr[i] <= '9' )
-	{
-		x = x * 10;
-		x = x + (ptr[i] - '0');
-		i++;
-	}
-	x = x * c;	
-	return(x);
-}
-/*#include <stdlib.h>
+#include <stdlib.h>
 #include <stdio.h>
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	unsigned char	*c;
+	int	i;
+
+	c = malloc(nmemb * size);
+	i = 0;
+	while(i < size)
+	{
+		c[i] = 0;
+		i++;
+	}
+	return(c);
+}
 int	main(void)
 {
-	printf("%d\n", ft_atoi("\t\n\r\v\f  469 \n"));
-	printf("%d\n", atoi("\t\n\r\v\f  469 \n"));
-}*/
+	char	*r = ft_calloc(3, sizeof(char));
+	char	*r1 = calloc(3, sizeof(char));
+
+	if(!r || !r1)
+		return(1);
+	else
+		printf("%s\n", r);
+		printf("%s\n", r1);
+	free(r);
+	free(r1);
+}
