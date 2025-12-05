@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:10:16 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/03 19:25:35 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/04 22:08:27 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,10 @@ void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 int	ft_atoi(const char *ptr);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *s);
+char *ft_substr(char const *s, unsigned int start,size_t len);
+
+
 
 #endif
