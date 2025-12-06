@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:10:16 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/04 22:08:27 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/06 20:39:03 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define LIBFT_H
 
 #include <unistd.h>
+#include <stdlib.h>
 
 
 int		ft_isalpha(int c);
@@ -40,6 +41,7 @@ int	ft_atoi(const char *ptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char *ft_substr(char const *s, unsigned int start,size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 
 
