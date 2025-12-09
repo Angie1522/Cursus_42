@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:10:16 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/08 14:51:42 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/09 12:45:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_strdup(const char *s);
 char *ft_substr(char const *s, unsigned int start,size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 
 
