@@ -1,57 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 19:17:51 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/11 14:00:53 by angcasad         ###   ########.fr       */
+/*   Created: 2025/12/11 16:06:17 by angcasad          #+#    #+#             */
+/*   Updated: 2025/12/11 16:10:27 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numb_count(int n)
+void ft_putendl_fd(char *s, int fd)
 {
-	int	x;
-
-	x = 0;
-	if(n <= 9)
-		return(1);
-	while(n > 9)
-		n = n / 10;
-	x++;
-}
-char	ft_big_number(int n, int *i)
-{
-	while(n > 9)
-	{
-		ft_big_number(n / 10); //1
-		ft_big_number(n % 10);
-	}
-	*i++;
-	return(n + '0');
-}
-
-char	ft_itoa(int n)
-{
-	int	i;
-	char	*str;
-	int	nc;
-
-	nc = ft_numb_count(n);
-	str = malloc((nc + 1) * sizeof(char));
-		if(!str)
-			return(NULL);
-	while(n > 9)
-	{
-		str[i] = ft_big_number(n);
-		i++;
-	}
-	
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
 int	main(void)
 {
-	
+	ft_putendl_fd("hola",1);
 }
