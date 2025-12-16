@@ -1,49 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 15:50:24 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/16 15:15:53 by angcasad         ###   ########.fr       */
+/*   Created: 2025/12/16 14:43:17 by angcasad          #+#    #+#             */
+/*   Updated: 2025/12/16 15:11:39 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <stdio.h>
 
-int	ft_atoi(const char *ptr)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
-	int	c;
-	int	x;
+	unsigned int	i;
 
 	i = 0;
-	x = 0;
-	c = 1;
-	while (ptr[i] == ' ' || (ptr[i] >= 9 && ptr[i] <= 13))
+	if(!s)
+		return;
+	while(s[i] != '\0')
 	{
+		(*f)(i, &s[i]);
 		i++;
 	}
-	if (ptr[i] == '-' || ptr[i] == '+')
-	{
-		if (ptr[i] == '-')
-			c = c * -1;
-		i++;
-	}
-	while (ptr[i] >= '0' && ptr[i] <= '9' )
-	{
-		x = x * 10;
-		x = x + (ptr[i] - '0');
-		i++;
-	}
-	x = x * c;
-	return (x);
 }
-/*#include <stdlib.h>
-#include <stdio.h>
+/*void	to_upper_str(unsigned int i, char *c)
+{
+		(void )i;
+		*c = ft_toupper(*c);
+		return;
+}
+	
 int	main(void)
 {
-	printf("%d\n", ft_atoi("\t\n\r\v\f  469 \n"));
-	printf("%d\n", atoi("\t\n\r\v\f  469 \n"));
+	char	str[] = "hola";
+	unsigned int	i;
+
+	i = 0;
+	
+	printf("%s\n", str);
+	ft_striteri(str, (*(to_upper_str)));
+	printf("%s\n", str);
+	return (0);
 }*/

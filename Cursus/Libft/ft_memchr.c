@@ -6,17 +6,18 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:10:36 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/02 15:23:56 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:23:11 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <string.h>
 //#include <stdio.h>
 #include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*tmps;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	tmps = (unsigned char *)s;
@@ -26,9 +27,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (&tmps[i]);
 		i++;
 	}
-	/*if(tmps[i] == '\0' && i == n)
-		return(&tmps[i]);*/
-		
 	return (NULL);
 }
 

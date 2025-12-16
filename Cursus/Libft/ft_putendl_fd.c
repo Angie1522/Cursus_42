@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 16:06:17 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/11 16:10:27 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:12:40 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
-int	main(void)
+/*int	main(void)
 {
 	ft_putendl_fd("hola",1);
-}
+}*/

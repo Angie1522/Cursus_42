@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:48:51 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/04 20:40:40 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:19:03 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*c;
-	size_t	i;
-	size_t	m;
-	
+	size_t			i;
+	size_t			m;
+
 	m = (nmemb * size);
-	if(m > INT_MAX)
-		return(NULL);
+	if (m > INT_MAX)
+		return (NULL);
 	c = malloc(m);
 	i = 0;
-	if(!c)
-		return(NULL);
-	while(i < m)
+	if (!c)
+		return (NULL);
+	while (i < m)
 	{
 		c[i] = 0;
 		i++;
 	}
-	return(c);
+	return (c);
 }
 /*int	main(void)
 {

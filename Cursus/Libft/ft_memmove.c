@@ -6,18 +6,18 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 10:40:59 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/08 13:50:20 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:29:38 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*tmp_dst;
 	char		*tmp_src;
-	size_t				i;
+	size_t			i;
 
 	tmp_dst = (char *)dst;
 	tmp_src = (char *)src;
@@ -31,7 +31,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		tmp_dst[i] = tmp_src[i];
 		i++;
 		}
-		
 	}
 	else if (tmp_dst > tmp_src)
 	{
