@@ -6,7 +6,7 @@
 #    By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/17 16:05:24 by angcasad          #+#    #+#              #
-#    Updated: 2025/12/16 15:14:23 by angcasad         ###   ########.fr        #
+#    Updated: 2025/12/20 12:29:05 by angcasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ SRC = \
 	ft_putchar_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
-	ft_putstr_fd.c
+	ft_putstr_fd.c\
+	ft_lstnew.c
 
 OBJ = $(SRC:.c=.o)
 

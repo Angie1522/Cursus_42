@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   funcion_mostrarlista.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 14:11:02 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/20 12:26:56 by angcasad         ###   ########.fr       */
+/*   Created: 2025/12/20 15:19:40 by angcasad          #+#    #+#             */
+/*   Updated: 2025/12/20 16:07:10 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+#include <stdio.h>
 
-t_list	*ft_lstnew(void *content)
+void	funcion_mostrarlista(t_list *lista)
 {
-	t_list	*lstnew;
-	
-	lstnew = malloc(1 * sizeof(t_list));
-	if(!lstnew)
-		return(NULL);
-	lstnew->content = content;
-	lstnew->next = NULL;
-	return(lstnew);
+	//quitar de la entrega y la libft y make
+	while(lista != NULL)
+	{
+		printf("%s\n", (char *)lista->content);
+		lista = lista->next;
+	}
 }
-/*int	main(void)
-{
-	t_list	*new;
-	int		num;
-	
-	num = 3;
-	new = ft_lstnew(&num);
-	printf("%d\n", *(int *)(new->content));
-	free(new);
-}*/

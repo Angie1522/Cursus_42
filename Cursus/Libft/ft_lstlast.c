@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 14:11:02 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/20 12:26:56 by angcasad         ###   ########.fr       */
+/*   Created: 2025/12/20 16:49:29 by angcasad          #+#    #+#             */
+/*   Updated: 2025/12/20 17:05:55 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //#include <stdio.h>
-
-t_list	*ft_lstnew(void *content)
+t_list *ft_lstlast(t_list *lst)
 {
-	t_list	*lstnew;
-	
-	lstnew = malloc(1 * sizeof(t_list));
-	if(!lstnew)
-		return(NULL);
-	lstnew->content = content;
-	lstnew->next = NULL;
-	return(lstnew);
+	while(lst->next != NULL)
+	{
+		//printf("%s\n",(char *)lst->content);
+		lst = lst->next;
+	}
+	return(lst);
 }
+
 /*int	main(void)
 {
-	t_list	*new;
-	int		num;
+	t_list	delocos;
+	t_list	haha;
+	t_list	new;
+
 	
-	num = 3;
-	new = ft_lstnew(&num);
-	printf("%d\n", *(int *)(new->content));
-	free(new);
+	delocos.content = "first";
+	delocos.next = &haha;
+	haha.content = "second";
+	haha.next = &new;
+	new.content = "meh";
+	new.next = NULL;
+	printf("%s\n",(char *)ft_lstlast(&delocos)->content);
+	return(0);
 }*/

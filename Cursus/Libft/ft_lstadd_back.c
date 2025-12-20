@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 14:11:02 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/20 12:26:56 by angcasad         ###   ########.fr       */
+/*   Created: 2025/12/20 17:06:51 by angcasad          #+#    #+#             */
+/*   Updated: 2025/12/20 17:17:38 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+void ft_lstadd_back(t_list **lst, t_list *new)
+{
+	ft_lstlast(*lst)->next = new;
 
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*lstnew;
+	///////////// o //////////////////
 	
-	lstnew = malloc(1 * sizeof(t_list));
-	if(!lstnew)
-		return(NULL);
-	lstnew->content = content;
-	lstnew->next = NULL;
-	return(lstnew);
+	/*t_list *last = ft_lstlast(*lst);
+	last->next = new;*/
+
 }
-/*int	main(void)
-{
-	t_list	*new;
-	int		num;
-	
-	num = 3;
-	new = ft_lstnew(&num);
-	printf("%d\n", *(int *)(new->content));
-	free(new);
-}*/
