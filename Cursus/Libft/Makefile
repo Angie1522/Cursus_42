@@ -6,7 +6,7 @@
 #    By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/17 16:05:24 by angcasad          #+#    #+#              #
-#    Updated: 2025/12/20 12:29:05 by angcasad         ###   ########.fr        #
+#    Updated: 2025/12/22 17:32:53 by angcasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,14 @@ SRC = \
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
 	ft_putstr_fd.c\
-	ft_lstnew.c
+	ft_lstnew.c\
+	ft_lstlast.c\
+	ft_lstsize.c\
+	ft_lstadd_front.c\
+	ft_lstadd_back.c\
+	ft_lstdelone.c\
+	ft_lstclear.c\
+	ft_lstiter.c
 
 OBJ = $(SRC:.c=.o)
 

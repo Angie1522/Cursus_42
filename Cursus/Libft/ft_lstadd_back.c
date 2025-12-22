@@ -6,12 +6,13 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 17:06:51 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/20 17:17:38 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/22 12:14:18 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_lstadd_back(t_list **lst, t_list *new)
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	ft_lstlast(*lst)->next = new;
 
@@ -21,3 +22,24 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	last->next = new;*/
 
 }
+/*
+int	main(void)
+{
+	t_list	delocos;
+	t_list	haha;
+	t_list	new;
+
+	
+	delocos.content = "first";
+	delocos.next = &haha;
+	haha.content = "second";
+	haha.next = &new;
+	new.content = "meh";
+	new.next = NULL;
+
+
+
+	funcion_mostrarlista(&delocos);
+	
+	return(0);
+}*/
