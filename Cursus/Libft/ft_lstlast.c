@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:49:29 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/20 17:05:55 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:14:02 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 //#include <stdio.h>
 t_list *ft_lstlast(t_list *lst)
 {
+	if(!lst)
+		return(NULL);
 	while(lst->next != NULL)
 	{
 		//printf("%s\n",(char *)lst->content);

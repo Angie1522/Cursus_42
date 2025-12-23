@@ -6,7 +6,7 @@
 #    By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/17 16:05:24 by angcasad          #+#    #+#              #
-#    Updated: 2025/12/22 17:32:53 by angcasad         ###   ########.fr        #
+#    Updated: 2025/12/23 21:09:56 by angcasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,8 @@ SRC = \
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
 	ft_putstr_fd.c\
+
+SRC_BONUS = \
 	ft_lstnew.c\
 	ft_lstlast.c\
 	ft_lstsize.c\
@@ -58,18 +60,23 @@ SRC = \
 	ft_lstadd_back.c\
 	ft_lstdelone.c\
 	ft_lstclear.c\
-	ft_lstiter.c
+	ft_lstiter.c\
+	ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-
+bonus: $(OBJ) $(OBJ_BONUS) 
+	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
+	
 clean :
-	$(RM) $(OBJ)
-
+	$(RM) $(OBJ) $(OBJ_BONUS)
+	
 fclean: clean
 	$(RM) $(NAME)
 
