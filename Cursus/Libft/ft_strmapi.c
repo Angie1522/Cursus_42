@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:34:27 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/16 14:38:59 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/26 18:57:07 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char*	ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int	i;
 	char	*str;
-	if(!s)
+	if(!s || !f)
 		return(NULL);
 	str = malloc((ft_strlen(s)+ 1) * sizeof(char));
 		if(!str)

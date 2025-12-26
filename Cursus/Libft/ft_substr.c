@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 21:44:21 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/10 19:04:46 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/26 16:58:24 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = (wlen - start);
 	m = malloc((len + 1) * sizeof(char));
 	if (!m)
-		return (ft_strdup(""));
+		return (NULL);
 	ft_strlcpy (m, &s[start],(len + 1));
 	return (m);
 }

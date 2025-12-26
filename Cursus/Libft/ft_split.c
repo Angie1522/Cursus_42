@@ -89,7 +89,10 @@ char	**ft_split(char const *s, char c)
 		len = charcount((s + start), c);
 		matrix[i] = ft_substr(s, start, len);
 		if(!matrix[i])
+		{
 			free_all(matrix);
+			return(NULL);
+		}
 		i++;
 		start += len;
 	}

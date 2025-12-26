@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:33:38 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/23 21:07:00 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/26 16:48:24 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,31 @@ t_list	*newcpylst(void *content, struct s_list *next)
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	if (!lst || !f || !del)
+		return(NULL);
+		
 	t_list	*first;
 	t_list	*tmp;
+	void	*newcontent;
+
+	
 	
 	first = NULL;
 	while(lst != NULL)
 	{
-		tmp = ft_lstnew(f(lst->content));
-			if(!tmp)
-				ft_lstclear(&first, del);
-
+		newcontent = f(lst->content);
+		if (!newcontent)
+		{
+			ft_lstclear(&first, del);
+			return(NULL);
+		}
+		tmp = ft_lstnew(newcontent);
+		if (!tmp )
+		{
+			ft_lstclear(&first, del);
+			free(newcontent);
+			return(NULL);
+		}
 		ft_lstadd_back(&first, tmp);
 		
 		lst = lst->next;
