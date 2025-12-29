@@ -10,21 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
-//#include	<stdio.h>
+#include "libft.h"
+
 static void	*free_all(char **matrix)
 {
 	int	i;
-	
+
 	i = 0;
-	while(matrix[i] != NULL)
+	while (matrix[i] != NULL)
 	{
-		free(matrix[i]);
+		free (matrix[i]);
 		i++;
 	}
-	free(matrix);
-	return(NULL);
+	free (matrix);
+	return (NULL);
 }
+
 static size_t	wordcount(char const *s, char c)
 {
 	size_t	i;
@@ -32,74 +33,69 @@ static size_t	wordcount(char const *s, char c)
 
 	i = 0;
 	counter = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		while(s[i] != '\0' && s[i] == c)
+		while (s[i] != '\0' && s[i] == c)
 			i++;
-		if(s[i] != '\0' && s[i] != c)
+		if (s[i] != '\0' && s[i] != c)
 			counter++;
-		while(s[i] != '\0' && s[i] != c)
+		while (s[i] != '\0' && s[i] != c)
 			i++;
 	}
-	return(counter);
+	return (counter);
 }
 
-static size_t	charcount(char const *s, char c)
+static size_t	charcount_len(char const *s, char c)
 {
 	size_t	i;
 	size_t	final;
 
 	i = 0;
 	final = 0;
-	
-	while(s[i] != '\0' && s[i] == c)
-			i++;
-		if(s[i] != '\0' && s[i] != c)
+	while (s[i] != '\0' && s[i] == c)
+		i++;
+	if (s[i] != '\0' && s[i] != c)
+	{
+		while (s[i] != '\0' && s[i] != c)
 		{
-			while(s[i] != '\0' && s[i] != c)
-			{
-				i++;
-				final++;
-			}
+			i++;
+			final++;
 		}
-	return(final);
+	}
+	return (final);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**matrix;
 	size_t	i;
-	size_t	j;
 	size_t	n_words;
 	size_t	start;
-	size_t	len;
-	
-	if(!s)
-		return(NULL);
+
+	if (!s)
+		return (NULL);
 	i = 0;
-	j = 0;
 	start = 0;
-	n_words = wordcount(s, c) ;
-	matrix = malloc((n_words + 1 )* sizeof(char *));
-	if(!matrix)
-		return(NULL);
-	while(i < n_words)
-	{	
-		while(s[start] == c)
+	n_words = wordcount(s, c);
+	matrix = malloc((n_words + 1) * sizeof(char *));
+	if (!matrix)
+		return (NULL);
+	while (i < n_words)
+	{
+		while (s[start] == c)
 			start++;
-		len = charcount((s + start), c);
-		matrix[i] = ft_substr(s, start, len);
-		if(!matrix[i])
-		{
-			free_all(matrix);
-			return(NULL);
-		}
+		matrix[i] = ft_substr(s, start, charcount_len((s + start), c));
+		if (!matrix[i])
+			return (free_all(matrix));
 		i++;
-		start += len;
+		start += charcount_len((s + start), c);
 	}
 	matrix[i] = NULL;
-	return(matrix);
+	return (matrix);
 }
-/*int	main(void)
+/*
+#include	<stdio.h>
+int	main(void)
 {
 	int	i;
 	char	**matrix;
@@ -108,14 +104,14 @@ char	**ft_split(char const *s, char c)
 	s = NULL;
 	i = 0;
 	matrix = ft_split1(s, ' ');
-	if(!matrix)
-		return(1);
+	if (!matrix)
+		return (1);
 			//freeall?
-	while(matrix[i] != NULL)
+	while (matrix[i] != NULL)
 	{
 		printf("%s\n",matrix[i]);
 		i++;
 	}
 	free_all(matrix);
-	return(0);
+	return (0);
 }*/

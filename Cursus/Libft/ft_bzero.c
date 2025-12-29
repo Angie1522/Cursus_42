@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 13:14:06 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/18 15:34:51 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	ft_bzero(void *s, size_t n)
     
         ft_bzero(str, 7);
         printf("%s", str);
-        return(0);
+        return (0);
 }*/

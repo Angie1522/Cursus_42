@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 12:11:59 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/21 15:07:54 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ char	*ft_strchr(const char *s, int c)
 {
 	printf("%s\n",ft_strchr("Hola", 'o'));
 	printf("%s",strchr("Hola", 'o'));
-	return(0);
+	return (0);
 }*/

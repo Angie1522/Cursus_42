@@ -6,29 +6,28 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:15:45 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/22 17:32:17 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-
-
-/*void	ft_cosas(void *cosas)
-{
-	printf("%s\n", (char *)cosas);
-}*/
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if(!lst || !f)
-		return;
-	while(lst!=NULL)
+	if (!lst || !f)
+		return ;
+	while (lst != NULL)
 	{
 		f(lst->content);
 		lst = lst->next;
 	}
 }
+/*
+#include <stdio.h>
+void	ft_cosas(void *cosas)
+{
+	printf("%s\n", (char *)cosas);
+}*/
 /*int	main(void)
 {
 	t_list	delocos;
@@ -51,5 +50,5 @@ t_list	* b = ft_lstnew(covid);
 	//ft_lstdelone(b, (&del_content));
 	free(covid);
 	free(b);
-	return(0);
+	return (0);
 }*/

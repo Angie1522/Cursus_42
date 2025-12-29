@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:07:56 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/18 15:54:54 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_toupper(int c)
 /*int	main(void)
 {
 	printf("%d", ft_toupper('A'));
-	return(0);
+	return (0);
 }*/

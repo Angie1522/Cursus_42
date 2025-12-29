@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:35:53 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/11 14:18:28 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	ft_isalnum(int c)
 	int c;
 	c = ' ';
 	printf("%d", ft_isalnum(c));
-	return(0);
+	return (0);
 }*/

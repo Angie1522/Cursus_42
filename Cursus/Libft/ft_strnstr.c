@@ -6,35 +6,33 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:28:44 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/02 17:15:58 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:08:53 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <bsd/string.h>
-
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	int	n;
+	int		n;
+
 	i = 0;
-	
 	n = ft_strlen(little);
-	if(little[i] == '\0')
-		return((char *)&big[i]);
-	
-	while(big[i] && n + i <= len)
+	if (little[i] == '\0')
+		return ((char *)&big[i]);
+	while (big[i] && n + i <= len)
 	{
-		if(ft_strncmp(&big[i], little, n) == 0)
-			return((char *)&big[i]);
+		if (ft_strncmp(&big[i], little, n) == 0)
+			return ((char *)&big[i]);
 		i++;
 	}
-		
-	return(NULL);
+	return (NULL);
 }
-/*int	main(void)
+/*
+#include <stdio.h>
+//#include <bsd/string.h>
+int	main(void)
 {
 	const char *largestring = "F";
     const char *smallstring = "F";

@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:21:24 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/13 15:48:57 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	main(void)
 
 	c = 'o';
 	printf("%d", ft_isprint(c));
-	return(0);
+	return (0);
 }*/

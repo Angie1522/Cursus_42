@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 13:20:00 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/21 15:35:49 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	
 	printf("%s\n", (char *)ft_memcpy(dest, src, n));
 	printf("%s", (char *)memcpy(dest, src, n));
-	return(0);
+	return (0);
 }*/

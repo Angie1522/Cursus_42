@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 17:06:51 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/23 20:35:45 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,13 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if(!lst || !new)
-		return;
-	if(*lst == NULL)
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
 		*lst = new;
 	else
 		ft_lstlast(*lst)->next = new;
-
-	///////////// o //////////////////
-	
-	/*t_list *last = ft_lstlast(*lst);
-	last->next = new;*/
-
 }
-
 /*int	main(void)
 {
 	t_list	delocos;
@@ -62,5 +55,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	funcion_mostrarlista(first);
 	funcion_mostrarlista(nada);
 	
-	return(0);
+	return (0);
 }*/

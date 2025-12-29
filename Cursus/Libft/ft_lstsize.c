@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:10:20 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/20 16:47:42 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	x;
+	int		x;
 	t_list	*temp;
 
 	temp = lst;
 	x = 0;
-	while(lst != NULL /*&& lst->next != temp*/)
+	while (lst != NULL)
 	{
 		x++;
 		if (lst->next == temp)
 			break ;
 		lst = lst->next;
 	}
-	/*if(lst->next == temp)
-		x++;*/
-	return(x);
+	return (x);
 }
 /*#include <stdio.h>
 
@@ -50,5 +48,5 @@ int	main(void)
 
 	printf("%d\n", ft_lstsize(&delocos));
 	
-	return(0);
+	return (0);
 }*/

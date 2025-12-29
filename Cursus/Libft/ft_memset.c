@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:02:43 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/13 15:55:05 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	int c = 'x';
 	ft_memset(str, c, 2);
 	printf("%s", str);
-	return(0);
+	return (0);
 }*/

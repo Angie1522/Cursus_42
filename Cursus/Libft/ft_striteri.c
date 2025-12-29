@@ -6,21 +6,20 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:43:17 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/16 15:11:39 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 12:37:48 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
 	i = 0;
-	if(!s)
-		return;
-	while(s[i] != '\0')
+	if (!s)
+		return ;
+	while (s[i] != '\0')
 	{
 		(*f)(i, &s[i]);
 		i++;
@@ -32,7 +31,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		*c = ft_toupper(*c);
 		return;
 }
-	
+#include <stdio.h>
 int	main(void)
 {
 	char	str[] = "hola";

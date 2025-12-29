@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:26:03 by angcasad          #+#    #+#             */
-/*   Updated: 2025/11/13 15:52:11 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	ft_isascii(int c)
 	int c;
 	c = '€';
 	printf("%d", ft_isascii(c));
-	return(0);
+	return (0);
 	
 }*/

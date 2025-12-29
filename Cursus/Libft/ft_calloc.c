@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:48:51 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/16 15:19:03 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:51 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	char	*r = ft_calloc(0, 0);
 	char	*r1 = calloc(0, 0);
 	
-	if(!r)
-		return(1);
+	if (!r)
+		return (1);
 	
 	printf("%s\n", r);
 	printf("%s\n", r1);

@@ -6,25 +6,24 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:49:29 by angcasad          #+#    #+#             */
-/*   Updated: 2025/12/23 20:14:02 by angcasad         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:07:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-t_list *ft_lstlast(t_list *lst)
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	if(!lst)
-		return(NULL);
-	while(lst->next != NULL)
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
 	{
-		//printf("%s\n",(char *)lst->content);
 		lst = lst->next;
 	}
-	return(lst);
+	return (lst);
 }
-
-/*int	main(void)
+/*#include <stdio.h>
+int	main(void)
 {
 	t_list	delocos;
 	t_list	haha;
@@ -38,5 +37,5 @@ t_list *ft_lstlast(t_list *lst)
 	new.content = "meh";
 	new.next = NULL;
 	printf("%s\n",(char *)ft_lstlast(&delocos)->content);
-	return(0);
+	return (0);
 }*/
