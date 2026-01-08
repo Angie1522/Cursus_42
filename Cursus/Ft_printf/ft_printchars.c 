@@ -1,0 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printchars.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/08 14:58:48 by angcasad          #+#    #+#             */
+/*   Updated: 2026/01/08 15:23:41 by angcasad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+/*deberia leer % y ver el caracter a continuacion. %c, lee c. intrerpreta
+que es un char...*/
+char	ft_printchars(char type, va_list args)
+{
+	
+}
