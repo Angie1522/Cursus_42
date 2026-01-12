@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:10:16 by angcasad          #+#    #+#             */
-/*   Updated: 2026/01/08 15:23:32 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/01/12 12:10:54 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <ft_printf.h>
 # include <stdarg.h>
 
 typedef struct s_list
