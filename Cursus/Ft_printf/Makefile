@@ -6,7 +6,7 @@
 #    By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/08 14:34:13 by angcasad          #+#    #+#              #
-#    Updated: 2026/01/12 12:26:11 by angcasad         ###   ########.fr        #
+#    Updated: 2026/01/12 14:23:32 by angcasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ RM = rm -f
 AR = ar rcs
 
 SRC = \
-	ft_printf.c
+	ft_printf.c\
+	findformat.c
 
 OBJ = $(SRC:.c=.o)
 

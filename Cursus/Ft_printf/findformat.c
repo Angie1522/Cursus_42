@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 13:36:52 by angcasad          #+#    #+#             */
-/*   Updated: 2026/01/12 14:18:48 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/01/12 14:42:52 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,16 @@ int	findformat(char format_l, va_list args, int *counter)
 		num = va_arg(args, int );
 		ft_putnbr_fd(num, 1);
 		sum = count_digit(num);
-		counter += sum;
-		return(&counter);
+		*counter += sum;
+		return(*counter);
 	}
-	
+	if(format_l == 'c')
+	{
+		cha = va_arg(args, int );
+		ft_putchar_fd((char)cha, 1);
+		*counter += 1;
+		return(*counter);
+	}
+	return(*counter);
 	
 }
