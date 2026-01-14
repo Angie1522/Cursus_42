@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:33:07 by angcasad          #+#    #+#             */
-/*   Updated: 2026/01/12 14:49:02 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/01/14 14:48:07 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,15 @@ int	ft_printf(const char *str, ...)
 	}
 	return(counter);
 }
+#include <stdio.h>
 
 int	main(void)
 {
-	ft_printf("hola %c tienes %d", 'A', 12); //no imprime la A
+	ft_printf("%u\n", -23);
+	printf("%u\n", -23);
+	
+	
+
+
 	return(0);
 }
