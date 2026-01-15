@@ -6,11 +6,24 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:33:07 by angcasad          #+#    #+#             */
-/*   Updated: 2026/01/14 14:48:07 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/01/15 14:06:22 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	findformat(char format_l, va_list args, int *counter)
+{
+	if( format_l == 'd' || format_l == 'i' || format_l == 'u')
+		return (is_digit(format_l, args, counter));
+	
+	else if(format_l == 'c' || format_l == 's')
+		return (is_alpha(format_l, args, counter));
+	else if(format_l == 'x' || format_l == 'X')
+		return (is_hexa(format_l, args, counter));
+	return(*counter);
+
+}
 
 int	ft_printf(const char *str, ...)
 {
@@ -44,8 +57,8 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("%u\n", -23);
-	printf("%u\n", -23);
+	ft_printf("%x\n", 12);
+	printf("%x\n", 12);
 	
 	
 

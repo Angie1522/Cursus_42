@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:37:11 by angcasad          #+#    #+#             */
-/*   Updated: 2026/01/12 14:24:57 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:53:27 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,10 @@
 
 int	ft_printf(const char *, ...);
 int	findformat(char format_l, va_list args, int *counter);
+int	is_digit(char format_l, va_list args, int *counter);
+int	is_alpha(char format_l, va_list args, int *counter);
+int	is_hexa(char format_l, va_list args, int *counter);
+
+
 
 #endif
