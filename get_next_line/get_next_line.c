@@ -14,24 +14,31 @@
 
 char	*get_next_line(int fd)
 {
-	static char	*readed;
-	char	buffer[BUFFER_SIZE + 1];
-	char	*complete_line;
-	size_t	bytes;
-	
-	//if(error de 0)
-	while()
-	bytes = read(fd, buffer, BUFFER_SIZE);
-	buffer[bytes] = '\0';
-	
-	while(bytes > 0)
-	{
-		
-		
-		nwlst(buffer);
-	}
-	
+	static t_node	*stash;
+	t_node	*new_node;
+	char	*readed;
+	int		bytes;
 
-	
+	readed = malloc(BUFFER_SIZE * sizeof(char));
+	if(!readed)
+		return(NULL);
+	bytes = read(fd, readed, BUFFER_SIZE);
+	if(bytes < 0)
+		return(NULL);
+	if(bytes > 0)
+	{
+		new_node = new_txt_node(readed);
+
+
+	}
+
+	/*1Leer y guardar
+		leo con read
+		guardo buf en un nodo
+		lo añado al final de la lista
+		repito operacion hasta que srch_chr(buf) == 1. (1 = \n o read = 0)*/
+
+	/*2Construir la linea
+		*/
 	
 }
