@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 11:37:33 by angcasad          #+#    #+#             */
-/*   Updated: 2026/01/28 14:01:23 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/02/11 11:42:47 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,6 @@
 #define	BUFFER_SIZE	10
 
 #endif
-typedef	struct s_node
-{
-	char	*content;
-	struct s_node	*next;	
-} t_node;
-
-char	*nwlst(char *readed);
-
 
 
 #endif

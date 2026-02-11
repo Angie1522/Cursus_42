@@ -6,58 +6,76 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 11:37:38 by angcasad          #+#    #+#             */
-/*   Updated: 2026/01/28 13:50:50 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/02/11 13:12:37 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-t_node	*new_txt_node(char *readed)
+char	*gnl_strchr(const char *s, int c)
 {
-	t_node	*nwnode;
+	int	i;
 
-	nwnode = malloc(1 * sizeof(t_node));
-	if (!nwnode)
-		return(NULL);
-	nwnode->content = readed;
-	nwnode->next = NULL;
-	return(nwnode);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == (unsigned char)c)
+		return ((char *)&s[i]);
+	return (NULL);
 }
 
-t_list	*lstlast(t_list *already_readed)
+size_t	gnl_strlen(const char *c)
 {
-	if (!already_readed)
+	size_t	len;
+
+	len = 0;
+	while (c[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
+void	*gnl_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*temp_dest;
+	unsigned char	*temp_src;
+	size_t			i;
+
+	i = 0;
+	temp_dest = (unsigned char *) dest;
+	temp_src = (unsigned char *) src;
+	if (dest == NULL && src == NULL)
+	{
+		return (dest);
+	}
+	while (i < n)
+	{
+		temp_dest[i] = temp_src[i];
+		i++;
+	}
+	return (dest);
+}
+char	*gnl_strjoin(char const *s1, char const *s2)
+{
+	size_t	len;
+	size_t	i;
+	char	*wrd;
+
+	if (s1 == 0)
 		return (NULL);
-	while (already_readed->next != NULL)
-	{
-		already_readed = already_readed->next;
-	}
-	return (already_readed);
-}
-
-void	lstadd_back(t_list **already_readed, t_list *new_readed)
-{
-	if (!already_readed || !new_readed)
-		return ;
-	if (*already_readed == NULL)
-		*already_readed = new_readed;
-	else
-		lstlast(*already_readed)->next = new_readed;
-}
-
-void	lstclear(t_list **already_readed, void (*del)(void*))
-{
-	t_list	*printed;
-
-	if (!already_readed || !del)
-		return ;
-	while (*already_readed != NULL)
-	{
-		printed = *already_readed;
-		del((*already_readed)->content);
-		*already_readed = (*already_readed)->next;
-		free (printed);
-	}
-	already_readed = NULL;
+	if (s2 == 0)
+		return (NULL);
+	len = (gnl_strlen(s1)) + gnl_strlen(s2)) + 1);
+	wrd = malloc((len) * sizeof(char));
+	if (!wrd)
+		return (NULL);
+	gnl_memcpy(wrd, s1, len);
+	i = ft_strlen(s1);
+	gnl_memcpy(&wrd[i], s2, (len - i));
+	return (wrd);
 }
 
