@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 11:37:38 by angcasad          #+#    #+#             */
-/*   Updated: 2026/02/11 13:12:37 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/02/12 15:50:48 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ size_t	gnl_strlen(const char *c)
 	size_t	len;
 
 	len = 0;
+	if(!c)
+		return(len);
 	while (c[len] != '\0')
 	{
 		len++;
@@ -59,22 +61,23 @@ void	*gnl_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-char	*gnl_strjoin(char const *s1, char const *s2)
+char	*gnl_strjoin(const char *s1, const char *s2)
 {
 	size_t	len;
 	size_t	i;
 	char	*wrd;
-
-	if (s1 == 0)
-		return (NULL);
+	
+	/*if (s1 == 0)
+		return (NULL);*/
 	if (s2 == 0)
 		return (NULL);
-	len = (gnl_strlen(s1)) + gnl_strlen(s2)) + 1);
+	len = ((gnl_strlen(s1) + gnl_strlen(s2)) + 1);
 	wrd = malloc((len) * sizeof(char));
 	if (!wrd)
 		return (NULL);
-	gnl_memcpy(wrd, s1, len);
-	i = ft_strlen(s1);
+	
+	gnl_memcpy(wrd, s1, gnl_strlen(s1));
+	i = gnl_strlen(s1);
 	gnl_memcpy(&wrd[i], s2, (len - i));
 	return (wrd);
 }
