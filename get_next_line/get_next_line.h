@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 11:37:33 by angcasad          #+#    #+#             */
-/*   Updated: 2026/02/12 14:37:46 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:22:18 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include	<stdlib.h>
 
 #ifndef	BUFFER_SIZE
-#define	BUFFER_SIZE	10
+#define	BUFFER_SIZE	1
 
 #endif
 char	*read_fd(int fd, char *box);

@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 11:36:12 by angcasad          #+#    #+#             */
-/*   Updated: 2026/02/12 15:55:07 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:24:13 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,25 @@ char	*read_fd(int fd, char *box)
 	char	*temp_box;
 	int		read_bytes;
 
-
 	temp_box = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if(!temp_box)
 		return(NULL);
 	read_bytes = read(fd, temp_box, BUFFER_SIZE);
-	temp_box[read_bytes] = '\0';
-	
 	if(read_bytes < 0)
 		return(NULL);
-	while(!gnl_strchr(temp_box, '\n'))
+	temp_box[read_bytes] = '\0';
+	while())
 	{
-		gnl_strjoin(box, temp_box);
-		if(!box || !temp_box)
+		box = gnl_strjoin(box, temp_box);
+		if(!box)
 			return(NULL);
+		read_bytes = read(fd, temp_box, BUFFER_SIZE);
+		if(read_bytes == 0)
+		{	
+			free(temp_box);
+			return(box);
+		}
+		temp_box[read_bytes] = '\0';
 	}
 	free(temp_box);
 	return(box); 
@@ -45,9 +50,12 @@ char	*get_next_line(int fd)
 	/*box = malloc(sizeof(char) * BUFFER_SIZE);
 	if(!box)
 		return(NULL);*/
+
+	
 	
 	if(fd < 0 || BUFFER_SIZE <= 0)
 		return(NULL);
+		
 	box = read_fd(fd, box);
 	if(!box)
 		return(NULL);

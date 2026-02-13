@@ -6,7 +6,7 @@ int	main(int argc, char **argv)
 
 	if(argc < 2)
 		return(1);
-	fd = open(*argv, O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 	if(!fd)
 		return(1);
 	printf("%s",get_next_line(fd));
