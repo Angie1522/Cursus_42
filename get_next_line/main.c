@@ -1,14 +1,23 @@
 #include "get_next_line.h"
+#include <stdio.h>
+#include <fcntl.h>
 
-int	main(int argc, char **argv)
+int main(void)
 {
-	int	fd;
+    int     fd;
+    char    *line;
 
-	if(argc < 2)
-		return(1);
-	fd = open(argv[1], O_RDONLY);
-	if(!fd)
-		return(1);
-	printf("%s",get_next_line(fd));
-	return(0);
+    fd = open("hola.txt", O_RDONLY);
+    if (fd < 0)
+        return (1);
+
+    line = get_next_line(fd);
+    while (line)
+    {
+        printf("%s", line);
+        free(line);
+        line = get_next_line(fd);
+    }
+    close(fd);
+    return (0);
 }

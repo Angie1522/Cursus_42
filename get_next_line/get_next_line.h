@@ -14,12 +14,11 @@
 # define GET_NEXT_LINE_H
 
 #include	<fcntl.h>
-#include	<stdio.h>
 #include	<unistd.h>
 #include	<stdlib.h>
 
 #ifndef	BUFFER_SIZE
-#define	BUFFER_SIZE	1
+#define	BUFFER_SIZE	10
 
 #endif
 char	*read_fd(int fd, char *box);
@@ -28,6 +27,8 @@ char	*gnl_strjoin(const char *s1, const char *s2);
 void	*gnl_memcpy(void *dest, const void *src, size_t n);
 size_t	gnl_strlen(const char *c);
 char	*gnl_strchr(const char *s, int c);
+char    *gnl_substr(char const *s, unsigned int start, size_t len);
+
 
 
 #endif

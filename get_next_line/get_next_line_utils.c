@@ -17,6 +17,8 @@ char	*gnl_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
+	if(!s)
+		return(NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] == (unsigned char)c)
@@ -47,13 +49,11 @@ void	*gnl_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*temp_src;
 	size_t			i;
 
+	if (!dest && !src) 
+		return (NULL);
 	i = 0;
 	temp_dest = (unsigned char *) dest;
 	temp_src = (unsigned char *) src;
-	if (dest == NULL && src == NULL)
-	{
-		return (dest);
-	}
 	while (i < n)
 	{
 		temp_dest[i] = temp_src[i];
@@ -63,20 +63,52 @@ void	*gnl_memcpy(void *dest, const void *src, size_t n)
 }
 char	*gnl_strjoin(const char *s1, const char *s2)
 {
-	size_t	len;
-	size_t	i;
+	size_t	len_1;
+	size_t	len_2;
 	char	*wrd;
 	
 	if (!s2)
 		return (NULL);
-	len = ((gnl_strlen(s1) + gnl_strlen(s2)) + 1);
-	wrd = malloc((len) * sizeof(char));
+	len_1 = gnl_strlen(s1);
+	len_2 = gnl_strlen(s2);
+	wrd = malloc((len_1 + len_2 + 1) * sizeof(char));
 	if (!wrd)
 		return (NULL);
 	if(s1 != NULL)
-		gnl_memcpy(wrd, s1, gnl_strlen(s1));
-	i = gnl_strlen(s1);
-	gnl_memcpy(&wrd[i], s2, (len - i));
+		gnl_memcpy(wrd, s1, len_1);
+	gnl_memcpy(wrd + len_1, s2, len_2 + 1);
 	return (wrd);
 }
 
+char    *gnl_substr(char const *s, unsigned int start, size_t len)
+{
+    size_t  i;
+    size_t  s_len;
+    char    *sub;
+
+    if (!s)
+        return (NULL);
+    s_len = gnl_strlen(s);
+   if (start >= s_len)
+	{
+		sub = malloc(1);
+		if (!sub)
+			return (NULL);
+		sub[0] = '\0';
+		return (sub);
+	}
+
+    if (len > s_len - start)
+        len = s_len - start;
+    sub = malloc(len + 1);
+    if (!sub)
+        return (NULL);
+    i = 0;
+    while (i < len)
+    {
+        sub[i] = s[start + i];
+        i++;
+    }
+    sub[i] = '\0';
+    return (sub);
+}
