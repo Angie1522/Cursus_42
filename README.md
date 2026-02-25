@@ -8,7 +8,8 @@ Ahora estudio en **42 Málaga**, donde aprendo programación a través de proyec
 
 ## 🧠 Tecnologías que estoy aprendiendo
 - 🟦 **C**  
-- 🐚 **Shell / Bash**  
+- 🐚 **Shell / Bash**
+- 🐍 **Python** 
 - 🐧 **Linux**  
 - 🔧 **Git & GitHub**  
 - 🧩 Resolución de problemas  
