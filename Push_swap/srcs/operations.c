@@ -5,8 +5,8 @@ void	swap(t_node **stack)
     if(!*stack || !(*stack)->next)
     	return;
     tmp = (*stack)->value;
-    (*stack)->value = (*stack)->value->next;
-    (*stack)->value->next = tmp;
+    (*stack)->value = (*stack)->next->value;
+    (*stack)->next->value = tmp;
 }
 
 void	sa(t_node **a)
