@@ -27,3 +27,16 @@ void	ss(t_node **a, t_node **b)
     swap(b);
     write(1,"ss\n", 3);
 }
+
+void	pb(t_node **a, t_node **b)
+{
+    t_node *tmp;
+    
+    if(!*a)
+    	return;
+    tmp = *a;//guardamos el top de a en tmp
+    *a = (*a)->next;//a empieza en el antiguo 2º de a
+    tmp->next = *b;//solucionamos que el antiguo top de a ahora señale al top de b y no al segundo de a. 
+    *b = tmp;//ahora guardamos nuestro antiguo top de a modificado en b.
+    write(1,"pb\n", 3);
+}
