@@ -3,6 +3,7 @@
 
 # include <stdlib.h>//para poder usar malloc y free
 # include <unistd.h>//para poder usar write
+# include "Libft/libft.h"
 
 typedef struct s_node//nuestra estructura para crear nodos
 {
@@ -14,5 +15,6 @@ typedef struct s_node//nuestra estructura para crear nodos
 t_node  *new_node(int value);
 void    add_to_bottom(t_node **stack, int value);
 int     stack_size(t_node *stack);
+int error(t_node **stack, int argc, char **argv);
 
 #endif//cierra el ifndef. Las tres líneas juntas se llaman include guard.
