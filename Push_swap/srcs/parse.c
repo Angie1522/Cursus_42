@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 16:51:46 by angcasad          #+#    #+#             */
-/*   Updated: 2026/03/03 17:43:31 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/03/04 11:06:42 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	atoi_push(const char *ptr)
 {
 	int	i;
 	int	c;
-	int	x;
+	long	x;
 
 	i = 0;
 	x = 0;
@@ -40,15 +40,35 @@ int	atoi_push(const char *ptr)
 		return(write(1, "Error\n", 6), exit(1), 1);
 	return (x);
 }
+
+int	duplicate(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (j)
+		{
+			if (atoi_push(argv[i]) == atoi_push(argv[j]))
+				return(1);
+			j++;
+		}
+		i++;
+	}
+	return(0);
+}
+
 int error(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
-	if(argc < 1)
+	if(argc < 2)
 		return(write(1, "Error\n", 6), 1);
 	i = 1;
-	
 	while(argv[i] != NULL)//mientras haya argumentos
 	{
 		j = 0;
@@ -64,5 +84,9 @@ int error(int argc, char **argv)
 		}
 		i++;
 	}
+	if(duplicate(argc, argv) == 1)
+		return(write(1, "Error\n", 6), 1);
 	return(0);
 }
+
+

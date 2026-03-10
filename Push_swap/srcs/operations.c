@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 16:51:58 by angcasad          #+#    #+#             */
-/*   Updated: 2026/03/03 16:53:57 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/03/04 11:01:27 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,43 @@
 
 void	swap(t_node **stack)
 {
-    int	tmp;
-    
-    if(!*stack || !(*stack)->next)
-    	return;
-    tmp = (*stack)->value;
-    (*stack)->value = (*stack)->next->value;
-    (*stack)->next->value = tmp;
+	int	tmp;
+
+	if(!*stack || !(*stack)->next)
+		return;
+	tmp = (*stack)->value;
+	(*stack)->value = (*stack)->next->value;
+	(*stack)->next->value = tmp;
 }
 
 void	sa(t_node **a)
 {
-    swap(a);
-    write(1,"sa\n", 3);
+	swap(a);
+	write(1,"sa\n", 3);
 }
 
 void	sb(t_node **b)
 {
-    swap(b);
-    write(1,"sb\n", 3);
+	swap(b);
+	write(1,"sb\n", 3);
 }
 
 void	ss(t_node **a, t_node **b)
 {
-    swap(a);
-    swap(b);
-    write(1,"ss\n", 3);
+	swap(a);
+	swap(b);
+	write(1,"ss\n", 3);
 }
 
 void	pb(t_node **a, t_node **b)
 {
-    t_node *tmp;
-    
-    if(!*a)
-    	return;
-    tmp = *a;//guardamos el top de a en tmp
-    *a = (*a)->next;//a empieza en el antiguo 2º de a
-    tmp->next = *b;//solucionamos que el antiguo top de a ahora señale al top de b y no al segundo de a. 
-    *b = tmp;//ahora guardamos nuestro antiguo top de a modificado en b.
-    write(1,"pb\n", 3);
+	t_node *tmp;
+
+	if(!*a)
+		return;
+	tmp = *a;//guardamos el top de a en tmp
+	*a = (*a)->next;//a empieza en el antiguo 2º de a
+	tmp->next = *b;//solucionamos que el antiguo top de a ahora señale al top de b y no al segundo de a. 
+	*b = tmp;//ahora guardamos nuestro antiguo top de a modificado en b.
+	write(1,"pb\n", 3);
 }

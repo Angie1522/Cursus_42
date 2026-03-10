@@ -16,5 +16,7 @@ t_node  *new_node(int value);
 void    add_to_bottom(t_node **stack, int value);
 int     stack_size(t_node *stack);
 int error(int argc, char **argv);
+int	duplicate(int argc, char **argv);
+int	atoi_push(const char *ptr);
 
 #endif//cierra el ifndef. Las tres líneas juntas se llaman include guard.
