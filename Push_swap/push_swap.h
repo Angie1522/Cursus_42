@@ -13,13 +13,11 @@ typedef struct s_node//nuestra estructura para crear nodos
 
 // stack_utils.c
 t_node  *new_node(int value);
-int	join_args(int argc, char **argv, t_node *aux);
-int	join_simple(char **argv, t_node *aux);
-void    add_to_bottom(t_node **stack, int value);
-int     stack_size(t_node *stack);
-int	duplicate(int argc, char **argv);
-int	atoi_push(const char *ptr);
+void	*free_all(char **matrix);
 
-int init_stack(char **args, t_list *stack_a);
+void free_stack(t_list *stack);
+void	free_exit(t_list *stack_a);
+int ft_atol(char *arg, int *value);
+t_list  *init_stack(char **args);
 
 #endif//cierra el ifndef. Las tres líneas juntas se llaman include guard.

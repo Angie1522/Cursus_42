@@ -4,18 +4,21 @@
 int main (int argc, char **argv)
 {
 	t_list *stack_a;
-	
+	char	**args;
 	stack_a = NULL;
 	if(argc == 2)
 	{
-		init_stack(ft_split(argv[1], ' '), stack_a);
+		args = ft_split(argv[1], ' ');
+
+		stack_a = init_stack(args);
+		free_all(args);
+		free_stack(stack_a);
 		return(0);
 	}
 	if(argc > 2)
 	{
-		init_stack(&(argv[1]), stack_a);
+		stack_a = init_stack(&(argv[1]));
 		return(0);
 	}
-	printf("Todo correcto\n");
 	return(0);
 }

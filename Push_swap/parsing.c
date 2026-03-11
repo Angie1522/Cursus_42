@@ -6,7 +6,7 @@
 /*   By: angcasad <angcasad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 10:27:56 by angcasad          #+#    #+#             */
-/*   Updated: 2026/03/10 15:38:03 by angcasad         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:25:40 by angcasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void free_stack(t_list *stack)
 	{
 		tmp = stack;
 		stack = stack->next;
+		free(tmp->content);
 		free (tmp);
 	}
 	
@@ -60,30 +61,54 @@ void	free_exit(t_list *stack_a)
 	free_stack(stack_a);
 	exit(EXIT_FAILURE);
 }
-// inicializa la lista enlazada 
-int init_stack(char **args, t_list *stack_a)
+void	*free_all(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	while (matrix[i] != NULL)
+	{
+		free (matrix[i]);
+		i++;
+	}
+	free (matrix);
+	return (NULL);
+}
+int	checker(t_list **stack_a)
+{
+	int	i;
+
+	i = 0;
+	while(stack_a)
+	{
+		if(stack_a[i])
+		{
+			//comprobar si hay dup
+		}
+		i++;
+	}
+	return(0);
+}
+t_list	*init_stack(char **args)
 {
 	int i;
-	int content;
+	int *content;
 	t_list *node = NULL;
+	t_list	*stack_a = NULL;
 
 	i = 0;
 	while(args[i])
 	{
-		printf("pre_atol: %s\n", args[i]);
-		if (ft_atol(args[i], &content))
+		content = malloc(sizeof(int));
+			if (!content)
 			free_exit(stack_a);
-		node = ft_lstnew(&content);
+		if (ft_atol(args[i], content))
+			free_exit(stack_a);
+		node = ft_lstnew(content);
 		if (!node)
 			free_exit(stack_a);
 		ft_lstadd_back(&stack_a, node);
-		printf("post_atol: %d\n", *((int *)(stack_a->content)));
 		++i;
 	}
-	while (stack_a)
-	{
-		printf("NUM: %d\n", *(int *)(stack_a->content));
-		stack_a = stack_a->next;
-	}
-	return 0;
+	return (stack_a);
 }
